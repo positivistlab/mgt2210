@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MGT 2210 | Organizational Network Demo</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>MGT 2210: IS and Digital Transformation</h1>
+    <p class="subtitle">Interactive organizational communication network demo</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="networkSelect">Choose network:</label>
+      <select id="networkSelect">
+        <option value="start">Before System Go-Live</option>
+        <option value="end">After System Go-Live</option>
+      </select>
+
+      <label for="titleSelect">Filter by title:</label>
+      <select id="titleSelect">
+        <option value="all">All titles</option>
+      </select>
+
+      <button id="resetButton">Reset View</button>
+    </section>
+
+    <section class="layout">
+      <div id="network"></div>
+
+      <aside id="infoPanel">
+        <h2>Node Details</h2>
+        <p>Click a node to inspect its role and communication ties.</p>
+        <div id="nodeDetails"></div>
+      </aside>
+    </section>
+
+    <section class="teaching-note">
+      <h2>Teaching Question</h2>
+      <p>
+        How does digital transformation reshape communication networks and informational power inside organizations?
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created for MGT 2210 teaching demonstration.</p>
+  </footer>
+
+  <script src="js/network.js"></script>
+</body>
+</html>
