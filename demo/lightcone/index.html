@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light Cone in Spacetime</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="left-panel panel">
+      <h1>Light Cone in Spacetime</h1>
+      <p class="subtitle">A light cone shows all possible paths that light can take from or to an event in spacetime.</p>
+
+      <div class="legend">
+        <div class="legend-item"><span class="dot future"></span><div><strong>Future light cone</strong><br><small>Events that can be influenced by the reference event.</small></div></div>
+        <div class="legend-item"><span class="dot past"></span><div><strong>Past light cone</strong><br><small>Events that can influence the reference event.</small></div></div>
+        <div class="legend-item"><span class="dot lightlike"></span><div><strong>Lightlike</strong><br><small>Events exactly on the cone: only light can connect them.</small></div></div>
+        <div class="legend-item"><span class="dot spacelike"></span><div><strong>Spacelike</strong><br><small>Outside the cone: no causal connection is possible.</small></div></div>
+        <div class="legend-item"><span class="dot timelike"></span><div><strong>Timelike</strong><br><small>Inside the cone: causal influence is possible.</small></div></div>
+      </div>
+
+      <div class="formula-card">
+        <h3>Interval between events</h3>
+        <div class="formula">s² = c²Δt² − Δx² − Δy² − Δz²</div>
+        <p><span class="green">s² &gt; 0</span> Timelike</p>
+        <p><span class="yellow">s² = 0</span> Lightlike</p>
+        <p><span class="purple">s² &lt; 0</span> Spacelike</p>
+      </div>
+    </aside>
+
+    <main class="viewport panel">
+      <div id="scene-container"></div>
+      <div class="label title-label">ct</div>
+      <div class="axis-note xnote">x</div>
+      <div class="axis-note ynote">y</div>
+      <div class="axis-note znote">z</div>
+      <div class="badge future-badge">Future light cone<br><small>t &gt; t₀</small></div>
+      <div class="badge past-badge">Past light cone<br><small>t &lt; t₀</small></div>
+    </main>
+
+    <aside class="right-panel panel">
+      <section>
+        <h2>Controls</h2>
+        <h3>1. Choose reference event</h3>
+        <label>t₀ <input id="t0" type="range" min="-1" max="1" step="0.1" value="0"><span id="t0Val">0.0</span></label>
+        <label>x₀ <input id="x0" type="range" min="-1" max="1" step="0.1" value="0"><span id="x0Val">0.0</span></label>
+        <label>y₀ <input id="y0" type="range" min="-1" max="1" step="0.1" value="0"><span id="y0Val">0.0</span></label>
+        <label>z₀ <input id="z0" type="range" min="-1" max="1" step="0.1" value="0"><span id="z0Val">0.0</span></label>
+      </section>
+
+      <section>
+        <h3>2. Select event to explore</h3>
+        <label>Δt <input id="dt" type="range" min="-3" max="3" step="0.05" value="1.5"><span id="dtVal">1.50</span></label>
+        <label>Δx <input id="dx" type="range" min="-3" max="3" step="0.05" value="1.0"><span id="dxVal">1.00</span></label>
+        <label>Δy <input id="dy" type="range" min="-3" max="3" step="0.05" value="0.5"><span id="dyVal">0.50</span></label>
+        <label>Δz <input id="dz" type="range" min="-3" max="3" step="0.05" value="0.0"><span id="dzVal">0.00</span></label>
+      </section>
+
+      <section>
+        <h3>3. View options</h3>
+        <label class="checkbox"><input id="showCone" type="checkbox" checked> Show light cone</label>
+        <label class="checkbox"><input id="showGrid" type="checkbox" checked> Show grid</label>
+        <label class="checkbox"><input id="animate" type="checkbox" checked> Play animation</label>
+        <button id="reset">Reset</button>
+      </section>
+
+      <section class="classification">
+        <h2>Current event classification</h2>
+        <p id="deltaText">Δt = 1.50, Δx = 1.00, Δy = 0.50, Δz = 0.00</p>
+        <div id="classCard" class="class-card timelike-card">
+          <h3 id="classTitle">TIMELIKE</h3>
+          <p id="intervalText">s² = 1.00 c² &gt; 0</p>
+          <p id="meaningText">This event can be causally connected to the reference event.</p>
+        </div>
+      </section>
+
+      <section class="reader">
+        <h2>How to read the light cone</h2>
+        <p><b class="green">Green:</b> possible future effects.</p>
+        <p><b class="purple">Purple:</b> possible past causes.</p>
+        <p><b class="yellow">Yellow:</b> light signal path.</p>
+        <p><b class="gray">Gray:</b> outside the cone, no causal connection.</p>
+      </section>
+    </aside>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

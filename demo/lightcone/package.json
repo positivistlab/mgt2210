@@ -1,0 +1,20 @@
+{
+  "name": "light-cone-spacetime-demo",
+  "version": "1.0.0",
+  "description": "Interactive light cone visualization for teaching spacetime and causality.",
+  "main": "index.html",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-basic-ssl": "latest",
+    "vite": "latest",
+    "three": "latest"
+  },
+  "devDependencies": {},
+  "keywords": ["physics", "relativity", "light-cone", "spacetime", "teaching", "threejs"],
+  "author": "",
+  "license": "MIT"
+}
